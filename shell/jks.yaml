@@ -1,0 +1,10 @@
+controller:
+  JCasC:
+    enabled: true
+    defaultConfig: true
+  installPlugins:
+    - kubernetes:1.29.0
+    - credentials-binding:1.24
+    - git:4.5.2
+    - configuration-as-code:1.47
+    - ssh-agent:1.21
