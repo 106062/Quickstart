@@ -14,7 +14,7 @@ controller:
               - credentials:
                   - basicSSHUserPrivateKey:
                       scope: GLOBAL
-                      id:
+                      id: 466d919e-fe75-4f96-80da-06fc4e2d9529
                       description: A demo ssh credential
                       username: sshuser
                       privateKeySource:
@@ -22,10 +22,10 @@ controller:
                           privateKey:
                   - usernamePassword:
                       scope: GLOBAL
-                      id:
+                      id: b10229a5-f830-4372-b37b-b4a02ea8159b
                       description: A demo user credential
-                      username:
-                      password:
+                      username: pwduser
+                      password: pwd1234
 
 ## Install plugins
   installPlugins:
