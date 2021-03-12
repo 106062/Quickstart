@@ -1,10 +1,16 @@
-## Default credentials
-credentials:
-
+## change master to controller or will have error
 controller:
   JCasC:
     enabled: true
     defaultConfig: true
+    configScripts:
+      # jenkins-inital: |
+      #   credentials:
+      #     system:
+      #       domainCredentials:
+      #       - credentials:
+      #   jenkins:
+      #     systemMessage: "Welcome to our CI\CD server by CasC."
 
 ## Install plugins
   installPlugins:
@@ -22,7 +28,3 @@ controller:
     - ssh-agent:1.21
     - ssh-slaves:1.31.5
     - workflow-aggregator:2.6
-
-## Jenkins master settings
-jenkins:
-  quietPeriod: 5
