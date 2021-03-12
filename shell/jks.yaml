@@ -1,10 +1,28 @@
+## Default credentials
+credentials:
+
 controller:
   JCasC:
     enabled: true
     defaultConfig: true
+
+## Install plugins
   installPlugins:
-    - kubernetes:1.29.0
-    - credentials-binding:1.24
-    - git:4.5.2
+    - command-launcher:1.5
     - configuration-as-code:1.47
+    - copyartifact:1.46
+    - credentials-binding:1.24
+    - git:4.6.0
+    - gitea:1.2.1
+    - gogs-webhook:1.0.15
+    - jdk-tool:1.5
+    - jquery-detached:1.2.1
+    - kubernetes:1.29.2
+    - slack:2.46
     - ssh-agent:1.21
+    - ssh-slaves:1.31.5
+    - workflow-aggregator:2.6
+
+## Jenkins master settings
+jenkins:
+  quietPeriod: 5
