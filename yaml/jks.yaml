@@ -1,10 +1,58 @@
+## change master to controller or will have error
 controller:
   JCasC:
     enabled: true
     defaultConfig: true
+    configScripts:
+      jenkins-inital: |
+        jenkins:
+          systemMessage: Welcome to our CI\CD server by CasC.
+          securityRealm:
+            local:
+              users:
+              - id: "admin"
+                name: "admin"
+
+        credentials:
+          system:
+            domainCredentials:
+            - credentials:
+              - basicSSHUserPrivateKey:
+                  scope: GLOBAL
+                  id: 466d919e-fe75-4f96-80da-06fc4e2d9529
+                  description: A demo ssh credential
+                  username: sshuser
+                  privateKeySource:
+                    directEntry:
+                      privateKey:
+              - usernamePassword:
+                  scope: GLOBAL
+                  id: b10229a5-f830-4372-b37b-b4a02ea8159b
+                  description: A demo user credential
+                  username: pwduser
+                  password: pwd1234
+
+        unclassified:
+          mailer:
+            defaultSuffix: "@test.com.tw"
+            smtpHost: "smtp.something.something.net"
+            smtpPort: "25"
+
+# Install plugins
   installPlugins:
-    - kubernetes:1.29.0
-    - credentials-binding:1.24
-    - git:4.5.2
+    - command-launcher:1.5
     - configuration-as-code:1.47
+    - copyartifact:1.46
+    - credentials-binding:1.24
+    - git:4.6.0
+    - gitea:1.2.1
+    - gogs-webhook:1.0.15
+    - jdk-tool:1.5
+    - jquery-detached:1.2.1
+    - kubernetes:1.29.2
+    #權限管理 plugin
+    - role-strategy:3.1.1
+    - slack:2.46
     - ssh-agent:1.21
+    - ssh-slaves:1.31.5
+    - workflow-aggregator:2.6
